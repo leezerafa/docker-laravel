@@ -9,9 +9,9 @@
 
 3. Clone/Copy all files from the docker-laravel repo to the directory of your choosing.
 
-4. Run Docker (this may take a while to build out the containers depending on your system) with the command:
-	* `docker-compose up`
-	* `docker-compose up -d` (for kitematic users)
+4. Run Docker with the command:
+	* `docker-compose up --build `
+	* `docker-compose up --build -d` (for kitematic users)
 
 5. In your laravel root Remember to rename .env-example to .env
 
