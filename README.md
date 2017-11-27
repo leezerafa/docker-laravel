@@ -42,6 +42,12 @@ This saves you a few key strokes here and there. Therefore to run an artisan com
 
 `docker-laravel make:controller MyController`
 
+### Composer Commands: 
+
+Obviously you may want to install packages via composer at some point back in the globally installed days we just did `composer require` but with the docker approach its a bit longer... To install a package,say Laravel Collective's Illuminate/html we would run the following command in our docker container. 
+
+`docker run --rm -v $(pwd):/app composer/composer:php7 require "laravelcollective/html":"^5.2.0"`
+
 ### Seeding the DB:
 
 Sometimes you may get the error: `[ReflectionException] Class ...TableSeeder does not exist` when trying to seed the DB using the `db:seed` command if this happens and you're sure its not code related run this command `docker run --rm -v $(pwd):/app composer/composer:php7 dumpautoload` to regenerate the composer packages, then you can run the `db:seed` again, happy seeding!
